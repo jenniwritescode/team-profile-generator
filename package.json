@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest --verbose tests/*"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/jenniwritescode/team-profile-generator#readme",
   "dependencies": {
-    "inquirer": "^8.2.2"
+    "inquirer": "^8.2.2",
+    "jest": "^27.5.1"
   }
 }

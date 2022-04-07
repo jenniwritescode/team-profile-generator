@@ -1,37 +1,20 @@
-// tests for employee class
-const { hasUncaughtExceptionCaptureCallback } = require('process');
-const { isTypedArray } = require('util/types');
-const Employee = require('../lib/Employee');
+//tests for Employee class
+const Employee = require("../lib/Employee");
 
-describe("Employee", (name, id, email) => {
-    describe("get employee name", () => {
-        it("should return employee name", () => {
-            const name = "Cady Heron";
-            const result = new Employee().getName();
-            expect(result).toEqual(name); 
-        });
+describe("Employee", () => {
+  describe("initalization", () => {
+    const employee = new Employee("Cady Heron", 6, "cady@email.com");
+    it("should return employee name", () => {
+      expect(employee.getName()).toEqual("Cady Heron");
     });
-
-    describe("get employee id", () => {
-        it("should return employee id", () => {
-            const id = "6";
-            const result = new Employee().getId();
-            expect(result).toEqual(id); 
-        });
+    it("should return employee id", () => {
+      expect(employee.getId()).toEqual(6);
     });
-
-    describe("get employee email", () => {
-        it("should return employee email", () => {
-            const email = "cady@email.com";
-            const result = new Employee().getEmail();
-            expect(result).toEqual(email); 
-        });
+    it("should return employee email", () => {
+      expect(employee.getEmail()).toEqual("cady@email.com");
     });
-
-    describe("get employee role", () => {
-        it("should return 'Employee' as the role", () => {
-            const result = new Employee().getRole();
-            expect(result).toEqual("Employee"); 
-        });
+    it("should return 'Employee' as the role", () => {
+      expect(employee.getRole()).toEqual("Employee");
     });
+  });
 });
