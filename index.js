@@ -83,7 +83,14 @@ const managerQ = [
 	},
 ];
 
-// function to ask questions
+const introTeamQ = {
+	type: 'checkbox',
+	message: 'Do you want to add anyone to this team? Select "Yes" to add an Engineer or Intern, or select "No" if you do not need to add any additional team members.',
+	choices: ['Yes', 'No'],
+	name: 'teamQ',
+};
+
+// function to start inquirer questions
 function askIntroQ() {
 	inquirer.prompt(introQ).then((startApp) => {
 		if (startApp.startQ == 'Yes') {
@@ -95,13 +102,26 @@ function askIntroQ() {
 	});
 }
 
+// function to get manager questions then prompt for team questions
 function askManagerQ() {
     inquirer.prompt(managerQ).then((createManager) => {
 		let manager = new Manager(createManager.managerName, createManager.managerId, createManager.manageEmail, createManager.managerOfficeNumber);
 		teamArray.push(manager);
 
-		//getTeamSize();
+		getTeamSize();
 });
+}
+
+// function to ask about additional team members, then either loop through to keep adding team members or stop and create the HTML for the team members
+function getTeamSize() {
+    inquirer.prompt(introTeamQ).then((buildTeam) => {
+		if (buildTeam.introTeamQ == 'Yes') {
+			addMoreTeamMembers();
+		}
+		if (buildTeam.introTeamQ == 'No') {
+			htmlRender(teamArray);
+		}
+	});
 }
 
 // start asking questions
