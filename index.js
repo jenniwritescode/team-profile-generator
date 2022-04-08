@@ -224,11 +224,9 @@ const internQ = [
 function askIntroQ() {
 	inquirer.prompt(introQ).then((startApp) => {
 		if (startApp.startQ === true) {
-            console.log(startApp.startQ);
 			log.green("Great! Let's get information on the team manager.");
 			askManagerQ();
 		} else {
-            console.log(startApp.startQ);
 			log.yellow(`Application closed. Type "node index.js" to run application again.`);
 		}
 	});
@@ -258,7 +256,6 @@ function askManagerQ() {
 // create a new engineer or intern
 function addTeamMember() {
     inquirer.prompt(teamMemberType).then((roleChoice) => {
-        console.log(roleChoice.teamMemberRole);
 		if (roleChoice.teamMemberRole === 'Engineer') {
 			log.magenta("Let's build an engineer profile!");
 			inquirer.prompt(engineerQ).then((buildEngineer) => {
