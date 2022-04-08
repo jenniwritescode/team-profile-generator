@@ -1,3 +1,4 @@
+// function to use colors in the command line
 function LogColors() {
     if (!this.init) {
 		LogColors.prototype.init = true;

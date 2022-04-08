@@ -15,6 +15,7 @@ const LogColors = require('./logColors');
 const outputDir = path.resolve(__dirname, 'dist');
 const outputPath = path.join(outputDir, 'index.html');
 
+// create a constant for changing colors in the command line
 const log = new LogColors();
 
 // array for team members
@@ -91,12 +92,14 @@ const managerQ = [
 	},
 ];
 
+// ask if more team members need to be added
 const introTeamQ = {
 	type: 'confirm',
-	message: 'Do you want to add anyone to this team? Select "y" to add an Engineer or Intern, or select "N" if you do not need to add any additional team members.',
+	message: 'Do you want to add anyone to this team? Select "Y" to add an Engineer or Intern, or select "N" if you do not need to add any additional team members.',
 	name: 'teamQ',
 };
 
+// ask which type of team member needs to be added
 const teamMemberType = {
 	type: 'list',
 	message: 'What type of team member are you adding?',
@@ -107,6 +110,7 @@ const teamMemberType = {
 	name: 'teamMemberRole',
 };
 
+// engineer questions
 const engineerQ = [
     {
 		type: 'input',
@@ -162,6 +166,7 @@ const engineerQ = [
 	},
 ];
 
+// intern questions
 const internQ = [
 	{
 		type: 'input',
@@ -215,7 +220,6 @@ const internQ = [
 	},
 ];
 
-
 // function to start inquirer questions
 function askIntroQ() {
 	inquirer.prompt(introQ).then((startApp) => {
@@ -251,6 +255,7 @@ function askManagerQ() {
 });
 }
 
+// create a new engineer or intern
 function addTeamMember() {
     inquirer.prompt(teamMemberType).then((roleChoice) => {
         console.log(roleChoice.teamMemberRole);
@@ -272,6 +277,7 @@ function addTeamMember() {
 	});
 }
 
+// async function to create html file and end program
 async function htmlRender(file) {
 	const indexHTML = makeHTML(file);
 	await writeAsyncFile(outputPath, indexHTML).then(function () {
