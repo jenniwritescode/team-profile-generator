@@ -35,6 +35,8 @@ SO THAT I have quick access to their emails and GitHub profiles
 
 ### Demo
 
+[Link to Demo Video](https://drive.google.com/file/d/1SwSTKpNMVQW-u8eTAiEHtY_2cMvCMeUS/view)
+
 ![demo gif](./img/demo.gif)
 
 ### Links
