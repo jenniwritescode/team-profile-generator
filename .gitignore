@@ -104,3 +104,6 @@ typings/
 
 #DS Store
 .DS_store
+
+#vscode
+.vscode

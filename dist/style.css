@@ -1,0 +1,59 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5 {
+    font-size: 0.9em;
+}
+
+h6 {
+    font-size: 0.8em;
+}
+
+a:link {
+    color: darkmagenta;
+}
+
+a:visited {
+    color: darkgreen
+}
+
+a:hover {
+    color: darkblue
+}
+
+a:active {
+    color: blueviolet
+}
+
+.team-heading, .card-header {
+    color: pink;
+    background-color: black;
+    text-align: center;
+    border-color: white;
+}
+
+.card-body {
+    background-color: black;
+}
