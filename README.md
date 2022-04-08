@@ -30,7 +30,7 @@ SO THAT I have quick access to their emails and GitHub profiles
 5. Run `npm i`
 6. Run `npm install inquirer`
 7. Run `node index.js` to start the team profile generator in your Terminal
-8. Follow instructions
+8. Follow instructions in the command line
 9. An HTML file will generate in the [dist](./dist/) folder in the repository directory.
 
 ### Demo
